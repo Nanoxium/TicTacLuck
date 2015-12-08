@@ -6,46 +6,20 @@ using System.Threading.Tasks;
 
 namespace TicTacLuck
 {
-    public enum PieceEffect
+    public enum Effect
     {
-        None,
-        ChangeForm,
-        AddPiece,
-        RemovePiece
+        None = 0,
     }
 
-    public abstract class Piece
+    public class Piece
     {
-        /// <summary>
-        /// X position on the grid
-        /// </summary>
-        protected int PosX { get; set; }
-
-        /// <summary>
-        /// Y position on the grid
-        /// </summary>
-        protected int PosY { get; set; }
-
-        /// <summary>
-        /// If it has an effect or not
-        /// </summary>
-        protected PieceEffect Effect = PieceEffect.None;
-
-        public Piece(int x, int y) : this(x, y, PieceEffect.None)
+        public int X { get; set; }
+        public int Y { get; set; }
+        
+        public Piece(int x, int y)
         {
-        }
-
-        /// <summary>
-        /// Create a piece at a specific position
-        /// </summary>
-        /// <param name="x">x position</param>
-        /// <param name="y">y position</param>
-        /// <param name="effect"></param>
-        protected Piece(int x, int y, PieceEffect effect)
-        {
-            PosX = x;
-            PosY = y;
-            Effect = effect;
+            this.X = x;
+            this.Y = y;
         }
     }
 }

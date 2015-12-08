@@ -14,8 +14,8 @@ namespace TicTacLuck
 
         public Controler(View v)
         {
-            _view = v;
-            _model = new Model(this);
+            this._view = v;
+            this._model = new Model(this);
         }
     }
 }

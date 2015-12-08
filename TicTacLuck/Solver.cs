@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace TicTacLuck
 {
-    class Player
+    class Solver
     {
-        public string Name { get; set; }
-
-        public Player(string name)
-        {
-            this.Name = name;
-        }
+        
     }
 }
