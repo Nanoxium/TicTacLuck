@@ -6,20 +6,33 @@ using System.Threading.Tasks;
 
 namespace TicTacLuck
 {
-    public enum Effect
+    public enum PieceEffect
     {
         None = 0,
     }
 
+    public enum PieceForm
+    {
+        Blank,
+        X,
+        O
+    }
+
     public class Piece
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        
-        public Piece(int x, int y)
+        #region Properties
+        public PieceForm Form { get; set; }
+        public PieceEffect Effect { get; set; }
+        #endregion
+
+        #region Constructor
+        public Piece(PieceForm p) : this(p, PieceEffect.None) { }
+
+        public Piece(PieceForm p, PieceEffect e)
         {
-            this.X = x;
-            this.Y = y;
+            this.Form = p;
+            this.Effect = e;
         }
+        #endregion
     }
 }
