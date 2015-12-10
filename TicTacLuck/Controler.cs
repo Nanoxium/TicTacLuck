@@ -17,5 +17,10 @@ namespace TicTacLuck
             this._view = v;
             this._model = new Model(this);
         }
+
+        public void AddPiece(int x, int y)
+        {
+            this.
+        }
     }
 }

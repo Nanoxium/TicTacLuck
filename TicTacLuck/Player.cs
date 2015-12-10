@@ -10,9 +10,12 @@ namespace TicTacLuck
     {
         public string Name { get; set; }
 
-        public Player(string name)
+        public PieceForm ChoosenForm { get; set; }
+
+        public Player(string name, PieceForm f)
         {
             this.Name = name;
+            this.ChoosenForm = f;
         }
     }
 }
