@@ -15,7 +15,7 @@ namespace TicTacLuck
 
         public Piece[,] Cells { get; set; }
 
-        public PieceForm Winner { get; }
+        public PieceForm Winner { get; set; }
 
         public int MoveCount { get; set; }
 
@@ -32,7 +32,7 @@ namespace TicTacLuck
             {
                 for (int y = 0; y < this.Size; y++)
                 {
-                    this.Cells[x, y] = new Piece(PieceForm.Blank);
+                    this.Cells[x, y] = new Piece(x,y,PieceForm.Blank);
                 }
             }
         }
@@ -46,9 +46,16 @@ namespace TicTacLuck
         {
             if (this.Cells[x, y] == null)
                 this.Cells[x, y] = p;
+            CheckBoard(x, y, p);
         }
 
-        public void CheckBoard()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="p"></param>
+        public void CheckBoard(int x, int y, Piece p)
         {
             this.MoveCount++;
 
@@ -57,60 +64,58 @@ namespace TicTacLuck
             //check col
             for (int i = 0; i < this.Size; i++)
             {
-                if (this.Cells[x, i] != s)
+                if (this.Cells[x, i].Form != p.Form)
                     break;
                 if (i == this.Size - 1)
                 {
-                    //report win for s
+                    this.Winner = p.Form;
                 }
             }
 
             //check row
             for (int i = 0; i < this.Size; i++)
             {
-                if (Cells[i, y] != s)
+                if (this.Cells[i, y].Form != p.Form)
                     break;
-                if (i == n - 1)
+                if (i == this.Size - 1)
                 {
-                    //report win for s
+                    this.Winner = p.Form;
                 }
             }
 
-            //check diag
+            //check diagonal
             if (x == y)
             {
                 //we're on a diagonal
                 for (int i = 0; i < this.Size; i++)
                 {
-                    if (Cells[i, i] != s)
+                    if (this.Cells[i, i].Form != p.Form)
                         break;
                     if (i == this.Size - 1)
                     {
-                        //report win for s
+                        this.Winner = p.Form;
                     }
                 }
             }
 
-            //check anti diag (thanks rampion)
+            //check anti diagonal
             for (int i = 0; i < this.Size; i++)
             {
-                if (Cells[i, (this.Size - 1) - i] != s)
+                if (Cells[i, (this.Size - 1) - i].Form != p.Form)
                     break;
                 if (i == this.Size - 1)
                 {
-                    //report win for s
+                    this.Winner = p.Form;
                 }
             }
 
             //check draw
-            if (moveCount == (this.Size ^ 2 - 1))
+            if (MoveCount == (this.Size * this.Size - 1))
             {
-                //report draw
+                this.Winner = PieceForm.Blank;
             }
         }
-
-        public
-
+        
         public void ResetBoard()
         {
             this.Cells = new Piece[this.Size, this.Size];
