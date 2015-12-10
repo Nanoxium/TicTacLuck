@@ -28,32 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlBoard = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // pnlBoard
-            // 
-            this.pnlBoard.Location = new System.Drawing.Point(12, 12);
-            this.pnlBoard.Name = "pnlBoard";
-            this.pnlBoard.Size = new System.Drawing.Size(833, 755);
-            this.pnlBoard.TabIndex = 0;
-            this.pnlBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoard_Paint);
-            // 
-            // Frame
+            // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1274, 785);
-            this.Controls.Add(this.pnlBoard);
-            this.Name = "Frame";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1274, 777);
+            this.DoubleBuffered = true;
+            this.Name = "View";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tic Tac Luck ( Tic Tac Toe with luck needed)";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoard_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.View_MouseClick);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlBoard;
     }
 }
 

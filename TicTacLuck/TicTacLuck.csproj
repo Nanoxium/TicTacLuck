@@ -50,7 +50,6 @@
     <Compile Include="Game.cs" />
     <Compile Include="Interfaces\IObserver.cs" />
     <Compile Include="Interfaces\ISubject.cs" />
-    <Compile Include="Model.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
