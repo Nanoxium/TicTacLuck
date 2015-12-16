@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacLuck
 {
-    class Player
+    public class Player
     {
         public string Name { get; set; }
 
