@@ -28,24 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pnlBoard = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlBoard
+            // 
+            this.pnlBoard.Location = new System.Drawing.Point(13, 13);
+            this.pnlBoard.Name = "pnlBoard";
+            this.pnlBoard.Size = new System.Drawing.Size(404, 400);
+            this.pnlBoard.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(424, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(250, 400);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informations de la partie";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(134, 371);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Commencer";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1274, 777);
+            this.ClientSize = new System.Drawing.Size(686, 429);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pnlBoard);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tic Tac Luck ( Tic Tac Toe with luck needed)";
+            this.Text = "Tic Tac Luck";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoard_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.View_MouseClick);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlBoard;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

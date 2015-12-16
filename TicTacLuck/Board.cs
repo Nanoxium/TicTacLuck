@@ -50,7 +50,7 @@ namespace TicTacLuck
         }
 
         /// <summary>
-        /// 
+        /// Check the board state relative to a piece
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -61,7 +61,7 @@ namespace TicTacLuck
 
             //check end conditions
 
-            //check col
+            //check column
             for (int i = 0; i < this.Size; i++)
             {
                 if (this.Cells[x, i].Form != p.Form)
@@ -86,7 +86,7 @@ namespace TicTacLuck
             //check diagonal
             if (x == y)
             {
-                //we're on a diagonal
+                //travel in diagonal
                 for (int i = 0; i < this.Size; i++)
                 {
                     if (this.Cells[i, i].Form != p.Form)
@@ -116,6 +116,9 @@ namespace TicTacLuck
             }
         }
         
+        /// <summary>
+        /// Reset the board
+        /// </summary>
         public void ResetBoard()
         {
             this.Cells = new Piece[this.Size, this.Size];

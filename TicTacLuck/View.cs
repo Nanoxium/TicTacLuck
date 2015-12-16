@@ -14,13 +14,10 @@ namespace TicTacLuck
     public partial class View : Form
     {
         private Controler _controler;
-        Color PenColor = Color.Purple;
-        private const int BOARD_WIDTH = 300;
-        private const int BOARD_HEIGHT = 300;
-        int n = 5;
+        Color PenColor = Color.Black;
         //Board offset for positionning
-        private const int BOARD_OFFSET_X = 50;
-        private const int BOARD_OFFSET_Y = 50;
+        private const int BOARD_OFFSET_X = 0;
+        private const int BOARD_OFFSET_Y = 0;
 
         public View()
         {
@@ -30,8 +27,7 @@ namespace TicTacLuck
 
         private void pnlBoard_Paint(object sender, PaintEventArgs e)
         {
-            
-            DrawGrid( n ,n, BOARD_WIDTH, BOARD_HEIGHT, e.Graphics);
+            DrawGrid( this._controler,n, this.pnlBoard.Width, this.pnlBoard.Height, e.Graphics);
         }
 
         private void DrawGrid(int columns, int rows, int width, int height, Graphics g)
