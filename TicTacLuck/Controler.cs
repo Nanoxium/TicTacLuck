@@ -1,4 +1,5 @@
-﻿using System;
+﻿// TODO: Add file header
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,24 @@ using System.Threading.Tasks;
 
 namespace TicTacLuck
 {
-    class Controler
+    public class Controler
     {
         private View _view;
-        private Model _model;
+        private Game _game;
 
         public Controler(View v)
         {
             this._view = v;
-            this._model = new Model(this);
+        }
+
+        public Game GameMatch
+        {
+            get { return this._game; }
+            set { this._game = value; }
         }
 
         public void AddPiece(int x, int y)
         {
-            this.
         }
     }
 }

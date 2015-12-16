@@ -1,4 +1,5 @@
-﻿namespace TicTacLuck
+﻿// TODO: Add file header
+namespace TicTacLuck
 {
     partial class View
     {
@@ -40,6 +41,7 @@
             this.pnlBoard.Name = "pnlBoard";
             this.pnlBoard.Size = new System.Drawing.Size(404, 400);
             this.pnlBoard.TabIndex = 0;
+            this.pnlBoard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlBoard_MouseClick);
             // 
             // groupBox1
             // 
@@ -73,7 +75,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tic Tac Luck";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBoard_Paint);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.View_MouseClick);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

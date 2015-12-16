@@ -1,4 +1,5 @@
-﻿using System;
+﻿// TODO: Add file header
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -15,7 +16,7 @@ namespace TicTacLuck
 
         public Piece[,] Cells { get; set; }
 
-        public PieceForm Winner { get; set; }
+        public PieceForm? Winner { get; set; }
 
         public int MoveCount { get; set; }
 

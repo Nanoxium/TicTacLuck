@@ -1,4 +1,5 @@
-﻿using System;
+﻿// TODO: Add file header
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace TicTacLuck.Interfaces
 {
-    interface ISubject
+    public interface ISubject
     {
-        List<IObserver> Observers { get; set; } 
         void Subscribe(IObserver observer);
         void Unsubscribe(IObserver observer);
         void Notify();
